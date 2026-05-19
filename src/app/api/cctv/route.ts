@@ -185,6 +185,30 @@ async function fetchUSEastCameras(): Promise<any[]> {
     },
   );
 
+  // Cincinnati, OH
+  cams.push(
+    {
+      id: 'cincinnati-cincyvision-yt',
+      lat: 39.089101,
+      lng: -84.527943,
+      name: 'CincyVision YT',
+      city: 'Cincinnati',
+      country: 'US',
+      external_url: 'https://www.youtube.com/@AaronPreslin/live',
+      source: 'Cincinnati, OH',
+    },
+    {
+      id: 'cincinnati-covington-earthcam',
+      lat: 39.090510,
+      lng: -84.510413,
+      name: 'Cincinnati-Covington EarthCam',
+      city: 'Covington',
+      country: 'US',
+      external_url: 'https://www.earthcam.com/usa/kentucky/covington/?cam=covington',
+      source: 'Cincinnati, OH',
+    },
+  );
+
   // NYC DOT (via proxy to bypass IP blocking)
   try {
     const res = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://webcams.nyctmc.org/api/cameras'), { signal: AbortSignal.timeout(10000) });
