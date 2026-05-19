@@ -158,6 +158,33 @@ async function fetchUSCentralCameras(): Promise<any[]> {
 // ── US-EAST: NYC, DC, Florida, Georgia ──
 async function fetchUSEastCameras(): Promise<any[]> {
   const cams: any[] = [];
+
+  // Butler County, OH
+  cams.push(
+    {
+      id: 'butler-oh-hamilton',
+      lat: 39.3988617,
+      lng: -84.5595353,
+      name: 'Hamilton, OH',
+      city: 'Hamilton',
+      country: 'US',
+      feed_url: 'https://gsccam.butlersheriff.org/axis-cgi/jpg/image.cgi',
+      external_url: 'https://gsccam.butlersheriff.org/camera/index.html#/video',
+      source: 'Butler County, OH',
+    },
+    {
+      id: 'butler-oh-129-747',
+      lat: 39.381435,
+      lng: -84.438423,
+      name: 'OH-129 at 747',
+      city: 'Butler County',
+      country: 'US',
+      feed_url: 'https://towercam.butlersheriff.org/axis-cgi/jpg/image.cgi',
+      external_url: 'https://towercam.butlersheriff.org/aca/index.html#view',
+      source: 'Butler County, OH',
+    },
+  );
+
   // NYC DOT (via proxy to bypass IP blocking)
   try {
     const res = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://webcams.nyctmc.org/api/cameras'), { signal: AbortSignal.timeout(10000) });

@@ -135,7 +135,7 @@ export default function CameraViewer({ camera, onClose, onLocate }: CameraViewer
             </div>
             <div className="flex gap-2">
               {camera.feed_url && (
-                <a href={camera.feed_url} target="_blank" rel="noopener noreferrer"
+                <a href={camera.external_url || camera.feed_url} target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-1 text-[7px] font-mono text-[#39FF14] hover:underline tracking-wider">
                   <ExternalLink className="w-2.5 h-2.5" /> FEED
                 </a>
